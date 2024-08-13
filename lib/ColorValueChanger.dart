@@ -10,7 +10,6 @@ class ColorValueChanger extends StatefulWidget {
     required this.value,
     required this.onChanged,
   });
-
   @override
   _ColorValueChangerState createState() => _ColorValueChangerState();
 }
@@ -19,19 +18,13 @@ class _ColorValueChangerState extends State<ColorValueChanger> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[
+      children: [
         Text(widget.property),
-        Slider(
-          min: 0,
-          max: 255,
-          value: widget.value.toDouble(),
-          label: widget.property,
-          onChanged: (double newValue) {
-            setState(() {
-              widget.onChanged(widget.property, newValue.round());
-            });
-          },
-        ),
+        Slider(min: 0,max: 255,value: widget.value.toDouble(),label: widget.property,
+        onChanged: (value) => {
+          widget.onChanged(widget.property, value.round()),
+        },
+        )
       ],
     );
   }
