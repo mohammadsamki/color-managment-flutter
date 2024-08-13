@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Responsive Flutter Example',
+      title: 'Complex Responsive Flutter Example',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -42,11 +42,45 @@ class ResponsiveLayout extends StatelessWidget {
 class MobileLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'This is a Mobile Layout',
-        style: TextStyle(fontSize: 24),
-      ),
+    return Column(
+      children: [
+        Expanded(
+          flex: 2,
+          child: Container(
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                'Header',
+                style: TextStyle(color: Colors.white, fontSize: 24),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 7,
+          child: Container(
+            color: Colors.grey[200],
+            child: Center(
+              child: Text(
+                'Content Area',
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: Container(
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                'Footer',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -54,11 +88,64 @@ class MobileLayout extends StatelessWidget {
 class TabletLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'This is a Tablet Layout',
-        style: TextStyle(fontSize: 24),
-      ),
+    return Column(
+      children: [
+        Expanded(
+          flex: 2,
+          child: Container(
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                'Header',
+                style: TextStyle(color: Colors.white, fontSize: 24),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 7,
+          child: Row(
+            children: [
+              Expanded(
+                flex: 2,
+                child: Container(
+                  color: Colors.blue[50],
+                  child: Center(
+                    child: Text(
+                      'Sidebar',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 5,
+                child: Container(
+                  color: Colors.grey[200],
+                  child: Center(
+                    child: Text(
+                      'Content Area',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: Container(
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                'Footer',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -66,11 +153,76 @@ class TabletLayout extends StatelessWidget {
 class DesktopLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'This is a Desktop Layout',
-        style: TextStyle(fontSize: 24),
-      ),
+    return Column(
+      children: [
+        Expanded(
+          flex: 2,
+          child: Container(
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                'Header',
+                style: TextStyle(color: Colors.white, fontSize: 24),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 8,
+          child: Row(
+            children: [
+              Expanded(
+                flex: 2,
+                child: Container(
+                  color: Colors.blue[50],
+                  child: Center(
+                    child: Text(
+                      'Sidebar',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 6,
+                child: Container(
+                  color: Colors.grey[200],
+                  child: Center(
+                    child: Text(
+                      'Content Area',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Container(
+                  color: Colors.blue[50],
+                  child: Center(
+                    child: Text(
+                      'Additional Sidebar',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: Container(
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                'Footer',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
